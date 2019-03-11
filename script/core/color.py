@@ -1,5 +1,5 @@
 from collections import namedtuple
-from utility import rgb2lab
+from ..utility import rgb2lab
 
 Rgb = namedtuple('Rgb', ('r', 'g', 'b'))
 LINK = 'https://www.tikkurila.pl/farby_dekoracyjne/kolory/wzorniki_kolorow_do_wnetrz/tikkurila_symphony_2436/{}.4374.xhtml'

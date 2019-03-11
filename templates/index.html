@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/form.html' import render_form, render_field %}
+
+{% block content %}
+    <h1 class="display-2">Szukanie koloru</h1>
+    <p class="lead">
+       Podaj kolor, a wyszukam bardzo podobny w palecie barw <em>Tikkurila</em>
+    </p>
+
+    <div class="d-flex justify-content-center align-items-center container rgb">
+        <div class="row">
+            <div class="col-12 text-center">
+                <form action="/" class="form-inline text-center" method="POST" role="form">
+                    {{ form.hidden_tag() }}     
+                    
+                    {{ render_field(form.r) }}
+                    {{ render_field(form.g) }}
+                    {{ render_field(form.b) }}
+                    <div class="form-group">
+                            {{ render_field(form.submit) }}
+                    </div>
+
+                </form>
+            </div>
+        </div>  
+
+        {% if content %}
+        <h1>DUPA</h1>
+        {% endif %}
+    </div>
+{% endblock %}

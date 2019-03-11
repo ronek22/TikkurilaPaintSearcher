@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from core.color import Color
+from .core.color import Color
 from multiprocessing import Pool
 from multiprocessing.pool import ThreadPool
 from concurrent.futures import ThreadPoolExecutor

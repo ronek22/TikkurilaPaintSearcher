@@ -1,0 +1,45 @@
+body {
+    padding-top: 100px;
+    background-color: #bfc3ba;
+    color: #3f3244;
+}
+
+.form-inline {
+    width: 100%;
+  }
+
+.form-inline label {
+    margin-right: 10px;
+}
+
+.form-inline .form-group {
+    margin-left:20px;
+  }
+
+
+.rgb {
+    margin-top:50px;
+}
+
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-inline > .form-group {
+    vertical-align: top;
+}
+
+
+
+
+footer {
+    background-color: #a9aca9;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+footer a {
+    color: #2A2C24;
+}
