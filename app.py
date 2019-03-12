@@ -25,8 +25,11 @@ def index():
     if form.validate_on_submit():
         flash("Color submited")
         app.logger.info(form.r.data)
+        color = (form.r.data, form.g.data, form.b.data)
         content = search_for_colors(form.r.data, form.g.data, form.b.data)
-        return render_template("index.html", form=form, content=content)
+        content = [(c.index, tuple(c.rgb['py/seq']), c.url) for c in content]
+        print(content)
+        return render_template("index.html", form=form, content=content, color=color)
     return render_template("index.html", form=form, content=None)
 
 

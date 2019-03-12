@@ -25,5 +25,5 @@ else:
 def search_for_colors(r, g, b):
     point = Color(r,g,b, 0)
     closest_colors = sorted(colors, key=lambda color: cie94(point.cie, color.cie))
-    closest_color = closest_colors[0:5]
+    closest_color = closest_colors[0:6]
     return closest_color

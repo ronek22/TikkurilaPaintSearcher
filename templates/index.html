@@ -8,7 +8,7 @@
     </p>
 
     <div class="d-flex justify-content-center align-items-center container rgb">
-        <div class="row">
+        <div class="flex-row">
             <div class="col-12 text-center">
                 <form action="/" class="form-inline text-center" method="POST" role="form">
                     {{ form.hidden_tag() }}     
@@ -23,9 +23,27 @@
                 </form>
             </div>
         </div>  
+    </div>
 
-        {% if content %}
-        <h1>DUPA</h1>
-        {% endif %}
+    <div class="container results">
+            <div class="row justify-content-center align-content-center">
+                {% if color %}
+                    <div class="col-md-6 text-center justify-content-center align-content-center gallery"
+                    style="background-color: rgb{{ color }}">
+                        <h2>SZUKANY</h2>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="row justify-content-center align-content-center">
+                    {% if content %}
+                        {% for color in content %}
+                            <div class="col-md-4 justify-content-center align-content-center gallery"  
+                            style="background-color: rgb{{ color[1] }}">
+                                <h2><a href="{{ color[2] }}">{{ color[0] }}</a></h2>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
     </div>
 {% endblock %}

@@ -1,7 +1,11 @@
 body {
     padding-top: 100px;
-    background-color: #bfc3ba;
+    background-color: #e9ebe6;
     color: #3f3244;
+}
+
+h2 {
+    font-weight: 400;
 }
 
 .form-inline {
@@ -35,11 +39,24 @@ body {
 
 
 footer {
-    background-color: #a9aca9;
+    background-color: #e6e9e6;
     margin-top: 50px;
     padding: 50px;
 }
 
 footer a {
     color: #2A2C24;
+}
+
+.gallery {
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    border: 10px solid #e9ebe6;
+    padding: 70px;
+}
+
+.results {
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
