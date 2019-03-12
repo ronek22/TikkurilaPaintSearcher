@@ -7,9 +7,9 @@
        Podaj kolor, a wyszukam bardzo podobny w palecie barw <em>Tikkurila</em>
     </p>
 
-    <div class="d-flex justify-content-center align-items-center container rgb">
-        <div class="flex-row">
-            <div class="col-12 text-center">
+    <div class="d-flex justify-content-center align-items-center rgb">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12 text-center">
                 <form action="/" class="form-inline text-center" method="POST" role="form">
                     {{ form.hidden_tag() }}     
                     
@@ -25,7 +25,7 @@
         </div>  
     </div>
 
-    <div class="container results">
+    <div class="results">
             <div class="row justify-content-center align-content-center">
                 {% if color %}
                     <div class="col-md-6 text-center justify-content-center align-content-center gallery"

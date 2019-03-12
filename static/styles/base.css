@@ -5,7 +5,11 @@ body {
 }
 
 h2 {
-    font-weight: 400;
+    font-weight: 300;
+}
+
+h2 a {
+    color: #9ea09e;
 }
 
 .form-inline {
@@ -17,7 +21,7 @@ h2 {
 }
 
 .form-inline .form-group {
-    margin-left:20px;
+    margin-left:10px;
   }
 
 
