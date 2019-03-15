@@ -1,9 +1,12 @@
 import requests
+import time
+from tqdm import tqdm
 from bs4 import BeautifulSoup
 from core.color import Color
 from multiprocessing import Pool
 from multiprocessing.pool import ThreadPool
 from concurrent.futures import ThreadPoolExecutor
+
 
 LINK = 'https://www.tikkurila.pl/farby_dekoracyjne/kolory/wzorniki_kolorow_do_wnetrz/tikkurila_symphony_2436/{}.4374.xhtml'
 LETTERS = ['F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'S', 'V']
@@ -18,13 +21,18 @@ class Scraper:
         self.get_indexes()
 
     def run(self):
-        for index in self.colors_index[:30]:
+        for index in tqdm(self.colors_index, total=len(self.colors_index)):
             self.colors.append(self.get_rgb(index))
 
     def run_multi(self):
-        with ThreadPool(20) as pool:
-            for result in pool.map(self.get_rgb, self.colors_index, chunksize=1):
+        with ThreadPool(30) as pool:
+            for result in tqdm(pool.imap(self.get_rgb, self.colors_index, chunksize=1), total=len(self.colors_index)):
                 self.colors.append(result)
+
+    def run_parralel(self):
+        pool = Pool()
+        for x in tqdm(pool.imap_unordered(self.get_rgb, self.colors_index), total=len(self.colors_index)):
+            self.colors.append(x)
 
 
     def get_rgb(self, index):
